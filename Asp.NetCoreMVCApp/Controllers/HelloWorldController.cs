@@ -8,5 +8,10 @@ namespace Asp.NetCoreMVCApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Hello()
+        {
+            return View();
+        }
     }
 }
