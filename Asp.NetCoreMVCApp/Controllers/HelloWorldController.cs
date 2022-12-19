@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Asp.NetCoreMVCApp.Models;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace Asp.NetCoreMVCApp.Controllers
 {
@@ -6,12 +8,15 @@ namespace Asp.NetCoreMVCApp.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            DogViewModel doggo = new DogViewModel() { Name= "Sif", Age=2 };
+            return View(doggo);
         }
 
         public IActionResult Hello()
         {
-            return View();
+            DogViewModel dog = new DogViewModel()
+            { Name = "Gus", Age = 4 };
+            return View(dog);
         }
     }
 }
