@@ -12,6 +12,10 @@ namespace Asp.NetCoreMVCApp.Controllers
             return View(doggo);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
         public IActionResult Hello()
         {
             DogViewModel dog = new DogViewModel()
