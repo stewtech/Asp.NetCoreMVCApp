@@ -6,10 +6,11 @@ namespace Asp.NetCoreMVCApp.Controllers
 {
     public class HelloWorldController : Controller
     {
+
+        private static List<DogViewModel> dogs = new List<DogViewModel>();
         public IActionResult Index()
         {
-            DogViewModel doggo = new DogViewModel() { Name= "Sif", Age=2 };
-            return View(doggo);
+            return View(dogs);
         }
 
         public IActionResult Create()
@@ -20,7 +21,9 @@ namespace Asp.NetCoreMVCApp.Controllers
 
         public IActionResult CreateDog(DogViewModel dogViewModel)
         {
-            return View("Index");
+            //return View("Index");
+            dogs.Add(dogViewModel);
+            return RedirectToAction(nameof(Index));
         }
         public IActionResult Hello()
         {
